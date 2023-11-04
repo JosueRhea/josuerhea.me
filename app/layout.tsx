@@ -15,8 +15,8 @@ export const metadata: Metadata = {
     type: "website",
   },
   twitter: {
-    title: 'Josue A.',
-    card: 'summary_large_image',
+    title: "Josue A.",
+    card: "summary_large_image",
   },
 };
 

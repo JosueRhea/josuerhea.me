@@ -14,7 +14,7 @@ export function Project({ desc, img, name, url, altImg }: Props) {
     <a
       href={url}
       target="_blank"
-      className="w-full h-fit border rounded-sm overflow-hidden hover:bg-muted transition-colors duration-150"
+      className="w-full h-full border rounded-sm overflow-hidden hover:bg-muted transition-colors duration-150"
     >
       <AspectRatio ratio={16 / 9}>
         <Image
@@ -24,7 +24,7 @@ export function Project({ desc, img, name, url, altImg }: Props) {
           alt={altImg}
         />
       </AspectRatio>
-      <div className="p-1 leading-tight">
+      <div className="p-1 leading-tight mt-1">
         <p>{name}</p>
         <p className="text-sm text-muted-foreground">{desc}</p>
       </div>
