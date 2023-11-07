@@ -1,26 +1,59 @@
 export const metadata = {
   title: "Rationalization - Notes from MM-110",
-  date: "2023-11-06", 
-}
+  date: "2023-11-06",
+};
 
-# Hello world
+## Rationalization - Notes from MM-110
 
-Hell world
+When there is a square root in quotients, it is very common to rewrite the quotient in a form where there are no roots in the denominator or numerator.
 
-### Subsection
-
-[hello](https://josuerhea.com)
-
-**This a text** for every morning _lovely_
-
-| Syntax    | Description |
-| --------- | ----------- |
-| Header    | Title       |
-| Paragraph | Text        |
+**Example 1**. Rationalize the denominator.
 
 $$
-a^2 + b^2 = c^2 \\
-\frac{5}{6}
+ \begin{align*}
+ &\frac{4}{\sqrt{3}} \color{blue} \cdot \frac{\sqrt{3}}{\sqrt{3}} \\
+ =& \frac{4\sqrt{3}}{(\sqrt{3})^2} \\
+ =&\boxed{\frac{4\sqrt{3}}{3}}
+ \end{align*}
 $$
 
-$\frac{5}{6}$
+Basically, what we did is multiply the denominator or numerator from which we want to eliminate the square root by itself, so we can cancel the square root because it's a power of two.
+
+**Example 2**. Rationalize the denominator.
+
+$$
+ \begin{align*}
+ &\frac{\sqrt{x + h} + \sqrt{x - h}}{\sqrt{x + h} - \sqrt{x - h}} \color{blue} \cdot \frac{\sqrt{x + h} + \sqrt{x - h}}{\sqrt{x + h} + \sqrt{x - h}} \\
+ =& \frac{(\sqrt{x + h} + \sqrt{x - h})^2}{(\sqrt{x + h})^2 - (\sqrt{x - h})^2}
+ \end{align*}
+$$
+
+We want to rationalize the denominator in a way that, when we multiply, we end up with a difference of squares in the denominator.
+
+Now we apply the algebraic identity to the denonimator and numerator.
+
+**Numerator**
+
+$$
+ \begin{align*}
+ =&(\sqrt{x + h} + \sqrt{x - h})^2 \\
+ =& (\sqrt{x + h})^2 + 2(\sqrt{x + h})(\sqrt{x - h}) + (\sqrt{x - h})^2 \\
+ =& x + h + 2\sqrt{x^2 - h^2} + x - h \\
+ =& \boxed{2x + 2\sqrt{x^2 - h^2}}
+ \end{align*}
+$$
+
+**Denominator**
+
+$$
+ \begin{align*}
+ =& (\sqrt{x + h})^2 - (\sqrt{x - h})^2 \\
+ =& \cancel{x} + \cancel{h} \cancel{-x} - \cancel{h} \\
+ =& \boxed{1}
+ \end{align*}
+$$
+
+So the final result would be 
+$$
+ \boxed{\frac{2x + 2\sqrt{x^2 - h^2}}{1}}
+$$
