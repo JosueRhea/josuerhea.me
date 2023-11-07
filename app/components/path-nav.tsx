@@ -7,11 +7,11 @@ interface Props {
 export const PathNav = ({ title }: Props) => {
   return (
     <nav className="w-full flex items-center gap-x-2">
-      <Link className="text-muted-foreground" href="/">Home</Link>
+      <Link className="text-muted-foreground no-underline hover:underline" href="/">Home</Link>
       <ChevronRightIcon />
-      <Link className="text-muted-foreground" href="/">Posts</Link>
+      <Link className="text-muted-foreground no-underline hover:underline" href="/">Posts</Link>
       <ChevronRightIcon />
-      <Link className="font-semibold" href="/home">{title}</Link>
+      <Link className="font-semibold no-underline hover:underline" href="/home">{title}</Link>
     </nav>
   );
 };
