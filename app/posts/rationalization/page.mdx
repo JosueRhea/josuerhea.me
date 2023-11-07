@@ -1,3 +1,4 @@
+import { MathBlock } from "@/app/components/mdx/math-block";
 export const metadata = {
   title: "Rationalization - Notes from MM-110",
   date: "2023-11-06",
@@ -9,6 +10,7 @@ When there is a square root in quotients, it is very common to rewrite the quoti
 
 **Example 1**. Rationalize the denominator.
 
+<MathBlock>
 $$
  \begin{align*}
  &\frac{4}{\sqrt{3}} \color{blue} \cdot \frac{\sqrt{3}}{\sqrt{3}} \\
@@ -16,24 +18,28 @@ $$
  =&\boxed{\frac{4\sqrt{3}}{3}}
  \end{align*}
 $$
+</MathBlock>
 
 Basically, what we did is multiply the denominator or numerator from which we want to eliminate the square root by itself, so we can cancel the square root because it's a power of two.
 
 **Example 2**. Rationalize the denominator.
 
+<MathBlock>
 $$
  \begin{align*}
  &\frac{\sqrt{x + h} + \sqrt{x - h}}{\sqrt{x + h} - \sqrt{x - h}} \color{blue} \cdot \frac{\sqrt{x + h} + \sqrt{x - h}}{\sqrt{x + h} + \sqrt{x - h}} \\
  =& \frac{(\sqrt{x + h} + \sqrt{x - h})^2}{(\sqrt{x + h})^2 - (\sqrt{x - h})^2}
  \end{align*}
 $$
+</MathBlock>
 
 We want to rationalize the denominator in a way that, when we multiply, we end up with a difference of squares in the denominator.
 
-Now we apply the algebraic identity to the denonimator and numerator.
+Now we apply an algebraic identity to the numerator.
 
 **Numerator**
 
+<MathBlock>
 $$
  \begin{align*}
  =&(\sqrt{x + h} + \sqrt{x - h})^2 \\
@@ -42,9 +48,11 @@ $$
  =& \boxed{2x + 2\sqrt{x^2 - h^2}}
  \end{align*}
 $$
+</MathBlock>
 
 **Denominator**
 
+<MathBlock>
 $$
  \begin{align*}
  =& (\sqrt{x + h})^2 - (\sqrt{x - h})^2 \\
@@ -52,8 +60,12 @@ $$
  =& \boxed{2h}
  \end{align*}
 $$
+</MathBlock>
 
-So the final result would be 
+So the final result would be
+
+<MathBlock>
 $$
  \boxed{\frac{2x + 2\sqrt{x^2 - h^2}}{2h}}
 $$
+</MathBlock>
