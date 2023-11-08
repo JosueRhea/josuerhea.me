@@ -19,7 +19,7 @@ export async function Posts() {
         {posts.map((post) => (
           <Link
             key={post.meta.title}
-            className={"p-1 w-full h-full border border-secondary rounded-sm hover:bg-muted transition-colors duration-200"}
+            className={"p-1 w-full h-full border border-secondary rounded-sm hover:bg-muted transition-colors duration-200 bg-white"}
             href={post.path}
           >
             <p>{post.meta.title}</p>
