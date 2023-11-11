@@ -21,7 +21,7 @@ export async function Posts() {
           <Link
             key={post.meta.title}
             className={
-              "p-1 w-full h-full border rounded-sm transition-colors duration-200 bg-muted relative"
+              "p-1 w-full h-full border rounded-sm transition-colors duration-200 relative bg-muted"
             }
             href={post.path}
           >
@@ -37,11 +37,13 @@ export async function Posts() {
                   [7, 3],
                   [10, 6],
                 ]}
-                className="absolute inset-x-0 inset-y-[-50%] h-[200%] w-full skew-y-[-18deg] fill-black/60 stroke-black/70 mix-blend-overlay dark:fill-white/2.5 dark:stroke-white/5"
+                className="absolute inset-x-0 inset-y-[-50%] h-[200%] w-full skew-y-[-18deg] fill-black/40 stroke-black/60 mix-blend-overlay"
               />
             </div>
-            <p>{post.meta.title}</p>
-            <p className="text-sm text-muted-foreground">{post.meta.date}</p>
+            <div className="z-20">
+              <p className="z">{post.meta.title}</p>
+              <p className="text-sm text-muted-foreground">{post.meta.date}</p>
+            </div>
           </Link>
         ))}
       </div>
