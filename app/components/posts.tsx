@@ -1,5 +1,6 @@
 import glob from "fast-glob";
 import Link from "next/link";
+import { GridPattern } from "./grid-pattern";
 
 export async function Posts() {
   let pages = await glob("**/*.mdx", { cwd: "app/posts" });
@@ -19,9 +20,26 @@ export async function Posts() {
         {posts.map((post) => (
           <Link
             key={post.meta.title}
-            className={"p-1 w-full h-full border border-secondary rounded-sm hover:bg-muted transition-colors duration-200 bg-white"}
+            className={
+              "p-1 w-full h-full border rounded-sm transition-colors duration-200 bg-muted relative"
+            }
             href={post.path}
           >
+            <div className="absolute inset-0 overflow-hidden">
+              <GridPattern
+                width={30}
+                height={20}
+                x="-12"
+                y="4"
+                squares={[
+                  [4, 3],
+                  [2, 1],
+                  [7, 3],
+                  [10, 6],
+                ]}
+                className="absolute inset-x-0 inset-y-[-50%] h-[200%] w-full skew-y-[-18deg] fill-black/60 stroke-black/70 mix-blend-overlay dark:fill-white/2.5 dark:stroke-white/5"
+              />
+            </div>
             <p>{post.meta.title}</p>
             <p className="text-sm text-muted-foreground">{post.meta.date}</p>
           </Link>
