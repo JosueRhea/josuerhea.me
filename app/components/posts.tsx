@@ -37,7 +37,7 @@ export async function Posts() {
                   [7, 3],
                   [10, 6],
                 ]}
-                className="absolute inset-x-0 inset-y-[-50%] h-[200%] w-full skew-y-[-18deg] fill-black/40 stroke-black/60 mix-blend-overlay"
+                className="absolute inset-x-0 inset-y-[-50%] h-[200%] w-full skew-y-[-18deg] fill-black/50 stroke-black/70 mix-blend-overlay"
               />
             </div>
             <div className="z-20">
