@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { GeistSans } from "geist/font";
+// import { GeistSans } from "geist/font";
+import { Figtree } from "next/font/google";
+
+const figtree = Figtree({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
   title: "Josue A. - @josuerhea",
@@ -27,7 +30,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${GeistSans.variable}`}>
+      <body className={`${figtree.variable}`}>
         {/* <div className="w-52 h-52 fixed top-20 right-20 blur-2xl bg-gradient-to-r from-indigo-500 to-pink-500 opacity-10 rounded-full -z-10" />
         <div className="w-52 h-52 fixed bottom-20 left-20 blur-2xl bg-gradient-to-r from-pink-500 to-indigo-500 opacity-10 rounded-full -z-10" /> */}
         {children}
