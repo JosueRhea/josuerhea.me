@@ -14,17 +14,10 @@ export const projects = [
     url: "https://audio.josuerhea.me/",
   },
   {
-    name: "lftm",
-    img: "/time-sc.png",
-    desc: "Simple time tracker.",
-    altImg: "lftm dashboard",
-    url: "https://time.josuerhea.me/",
-  },
-  {
-    name: "QuickBoard",
-    img: "/quickboard-sc.png",
-    desc: "Sync your clipboard across your devices.",
-    altImg: "QuickBoard app",
-    url: "https://clipboard.josuerhea.me/",
+    name: "just two",
+    img: "/photos/7.png",
+    desc: "Chat with your friends in real time with no history, just like in real life",
+    altImg: "just two app",
+    url: "https://chat.josuerhea.me",
   },
 ];

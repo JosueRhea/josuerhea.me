@@ -1,0 +1,40 @@
+import { MathBlock } from "@/app/components/mdx/math-block";
+import { PathNav } from "@/app/components/path-nav";
+
+export const metadata = {
+  title: "Building a scheduling system",
+  date: "2025-08-26",
+};
+
+<PathNav title="Building a scheduling system" />
+
+### The issue
+We want to create a system that can receive an HTTP request, schedule it to be sent back later via webhook, and ensure it is delivered at the exact time we specify, with a maximum margin of error of about one second.
+
+### Cron approach
+So we start by saving the request in a database and we use a column like `scheduled_at` to store the time we want to send the request.
+
+Now we need to create a cron job that will check the database for requests that are scheduled to be sent in the future and send them.
+
+#### The downside
+Most likely the cron job will be running every minute, and that cause a that the schedule may be off by a some amount of time that the cron job wasn't running.
+
+![Pic](/scheduling/image.png)
+
+### The solution
+The solution in this case is to use a queue like [Amazon SQS](https://aws.amazon.com/sqs/). The only problem we have is that the MAXIMUM delay is 15 minutes. And probably our system can schedule request up to 30 days in the future.
+
+So how can we solve this?...
+
+Well, we keep the cron that we already have, but now instead of checking the `schedule_at` at the time the request is scheduled, we check the `schedule_at` at the time the request is scheduled minus 15 minutes or it could be less that that.
+
+<div className="text-center">
+  (schedule_at - 15 minutes)
+</div>
+
+If that condition is true, we send the request to the queue. And now we use a worker to send the request to the webhook. And the worker will receive the request and send it at the exact time we specified.
+
+So the final architecture could look like this:
+
+![Architecture](/scheduling/arch.png)
+

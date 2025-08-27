@@ -5,8 +5,8 @@ import Image from "next/image";
 
 const images = [
   "/photos/1.jpg",
-  "/photos/3.jpg",
-  "/photos/4.jpg",
+  // "/photos/3.jpg",
+  // "/photos/4.jpg",
   "/photos/6.jpg",
 ];
 
@@ -58,8 +58,8 @@ function SingleImage({ src, index }: SingleImageProps) {
 
 export function Life() {
   return (
-    <section className="mx-auto w-full max-w-lg mt-10">
-      <div className="w-full grid grid-cols-2 sm:grid-cols-4 mt-8 px-4">
+    <section className="mx-auto w-full max-w-xs mt-10">
+      <div className="w-full grid grid-cols-2 mt-8 px-4">
         <AnimatePresence>
           {images.map((img, index) => (
             <SingleImage src={img} key={img} index={index} />
