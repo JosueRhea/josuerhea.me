@@ -22,15 +22,19 @@ export function Project({ desc, img, name, url, altImg, idx }: Props) {
       className="w-full h-full rounded-sm grid grid-cols-2 items-center transition-colors duration-150 gap-2"
       initial={{
         opacity: 0,
-        transform: `translateY(100px) scale(0)`,
+        transform: `translateY(100px)`,
       }}
       animate={{
         opacity: 1,
-        transform: `translateY(0) scale(1) rotate(${rotation}deg)`,
+        transform: `rotate(${rotation}deg) translateY(0)`,
+        // transition: {
+        //   type: "spring",
+        //   stiffness: 300,
+        // },
       }}
       transition={{
         delay: idx * 0.1,
-        duration: 0.2,
+        duration: 0.3,
       }}
     >
       {idx % 2 !== 0 && (
