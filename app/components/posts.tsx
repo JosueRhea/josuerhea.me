@@ -1,6 +1,7 @@
 import glob from "fast-glob";
 import Link from "next/link";
-import { GridPattern } from "./grid-pattern";
+import { ArrowUpRight } from "lucide-react";
+import { SectionHeading } from "./section-heading";
 
 export async function Posts() {
   let pages = await glob("**/*.mdx", { cwd: "app/posts" });
@@ -10,26 +11,25 @@ export async function Posts() {
       meta: (await import(`../posts/${filename}`)).metadata,
     }))
   );
-  console.log(posts);
+  posts.sort((a, b) => (a.meta.date < b.meta.date ? 1 : -1));
 
   return (
-    <section className="mx-auto w-full max-w-lg mt-10">
-      <h3 className="scroll-m-20 text-left text-2xl font-semibold tracking-tight">
-        Posts
-      </h3>
-      <div className="w-full grid grid-cols-1 mt-4 gap-4">
+    <section>
+      <SectionHeading>Writing</SectionHeading>
+      <div className="-mx-3 flex flex-col">
         {posts.map((post) => (
           <Link
             key={post.meta.title}
-            className={
-              "p-1 w-full h-full rounded-sm transition-colors duration-200 relative underline"
-            }
             href={post.path}
+            className="group flex items-baseline justify-between gap-4 rounded-lg px-3 py-3 transition-colors hover:bg-muted"
           >
-            <div className="z-20">
-              <p className="z">{post.meta.title}</p>
-              <p className="text-sm text-muted-foreground">{post.meta.date}</p>
-            </div>
+            <span className="flex items-center gap-1 font-medium">
+              {post.meta.title}
+              <ArrowUpRight className="h-4 w-4 shrink-0 text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100" />
+            </span>
+            <time className="shrink-0 font-mono text-xs text-muted-foreground">
+              {post.meta.date}
+            </time>
           </Link>
         ))}
       </div>

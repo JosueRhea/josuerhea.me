@@ -1,24 +1,25 @@
 export function Footer() {
   return (
-    <div className="w-full max-w-md mx-auto text-center mt-4">
-      <p className="leading-7 [&:not(:first-child)]:mt-6">
-        Follow me on{" "}
+    <footer className="mt-4 flex items-center justify-between border-t border-border pt-8 font-mono text-xs text-muted-foreground">
+      <span>© {new Date().getFullYear()} Josué Alvarenga</span>
+      <span className="flex items-center gap-4">
         <a
           href="https://twitter.com/josuerhea"
-          className="underline font-semibold"
           target="_blank"
+          rel="noreferrer"
+          className="transition-colors hover:text-foreground"
         >
           Twitter
-        </a>{" "}
-        or see more of my code on{" "}
+        </a>
         <a
           href="https://github.com/JosueRhea"
-          className="underline font-semibold"
           target="_blank"
+          rel="noreferrer"
+          className="transition-colors hover:text-foreground"
         >
-          Github
+          GitHub
         </a>
-      </p>
-    </div>
+      </span>
+    </footer>
   );
 }

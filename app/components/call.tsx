@@ -9,6 +9,7 @@ import {
   DialogTrigger,
 } from "@/app/components/ui/dialog";
 import { Button } from "@/app/components/ui/button";
+import { SectionHeading } from "./section-heading";
 
 export function Call() {
   useEffect(() => {
@@ -19,17 +20,27 @@ export function Call() {
   }, []);
 
   return (
-    <section className="mx-auto w-full flex flex-col justify-center items-center max-w-lg mt-10">
-      <h3 className="text-2xl font-semibold tracking-tight">Contact me</h3>
+    <section>
+      <SectionHeading>Contact</SectionHeading>
+      <p className="text-base leading-relaxed text-foreground/90">
+        Want to talk? Book a quick call, or email me at{" "}
+        <a
+          href="mailto:hi@josuerhea.me"
+          className="font-medium underline underline-offset-4 transition-colors hover:text-foreground"
+        >
+          hi@josuerhea.me
+        </a>
+        .
+      </p>
       <Dialog>
         <DialogTrigger asChild>
-          <Button variant="default" className="mt-2">
-            Schedule a call with me
+          <Button variant="default" className="mt-5">
+            Schedule a call
           </Button>
         </DialogTrigger>
-        <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
+        <DialogContent className="max-h-[80vh] max-w-4xl overflow-y-auto">
           <DialogHeader>
-            <DialogTitle>Schedule a Meeting</DialogTitle>
+            <DialogTitle>Schedule a meeting</DialogTitle>
           </DialogHeader>
           <div className="mt-4">
             <Cal
@@ -41,12 +52,6 @@ export function Call() {
           </div>
         </DialogContent>
       </Dialog>
-      <p className="text-sm text-muted-foreground mt-4">
-        or send me an email to{" "}
-        <a href="mailto:hi@josuerhea.me" className="underline font-semibold">
-          hi@josuerhea.me
-        </a>
-      </p>
     </section>
   );
 }

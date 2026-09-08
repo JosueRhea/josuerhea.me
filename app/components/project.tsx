@@ -1,7 +1,5 @@
-"use client";
 import Image from "next/image";
-import { AspectRatio } from "./ui/aspect-ratio";
-import { motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
 
 interface Props {
   name: string;
@@ -12,52 +10,30 @@ interface Props {
   idx: number;
 }
 
-export function Project({ desc, img, name, url, altImg, idx }: Props) {
-  const rotation = idx % 2 === 0 ? -3 : 3;
-
+export function Project({ desc, img, name, url, altImg }: Props) {
   return (
-    <motion.a
+    <a
       href={url}
       target="_blank"
-      className="w-full h-full rounded-sm grid grid-cols-2 items-center transition-colors duration-150 gap-2"
-      initial={{
-        opacity: 0,
-        transform: `translateY(100px)`,
-      }}
-      animate={{
-        opacity: 1,
-        transform: `rotate(${rotation}deg) translateY(0)`,
-        // transition: {
-        //   type: "spring",
-        //   stiffness: 300,
-        // },
-      }}
-      transition={{
-        delay: idx * 0.1,
-        duration: 0.3,
-      }}
+      rel="noreferrer"
+      className="group flex items-center gap-4 rounded-lg px-3 py-3 transition-colors hover:bg-muted"
     >
-      {idx % 2 !== 0 && (
-        <div className="leading-tight">
-          <p>{name}</p>
-          <p className="text-sm text-muted-foreground underline">{desc}</p>
-        </div>
-      )}
-      <AspectRatio ratio={16 / 9}>
+      <div className="relative h-16 w-24 shrink-0 overflow-hidden rounded-md border border-border bg-muted">
         <Image
           fill
-          className="w-full h-48 object-cover rounded-sm"
+          sizes="96px"
+          className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
           src={img}
           alt={altImg}
         />
-      </AspectRatio>
-
-      {idx % 2 === 0 && (
-        <div className="leading-tight">
-          <p>{name}</p>
-          <p className="text-sm text-muted-foreground underline">{desc}</p>
-        </div>
-      )}
-    </motion.a>
+      </div>
+      <div className="min-w-0 flex-1">
+        <p className="flex items-center gap-1 font-medium">
+          {name}
+          <ArrowUpRight className="h-4 w-4 shrink-0 text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100" />
+        </p>
+        <p className="mt-0.5 truncate text-sm text-muted-foreground">{desc}</p>
+      </div>
+    </a>
   );
 }

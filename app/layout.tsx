@@ -1,24 +1,26 @@
 import type { Metadata } from "next";
 import "./globals.css";
-// import { GeistSans } from "geist/font";
-import { Figtree } from "next/font/google";
+import { Figtree, JetBrains_Mono } from "next/font/google";
 
 const figtree = Figtree({ subsets: ["latin"], variable: "--font-sans" });
+const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" });
 
 export const metadata: Metadata = {
-  title: "Josue A. - @josuerhea",
-  description: "A software engineer that makes stuff on the web thingy.",
+  title: "Josué Alvarenga — Software Engineer",
+  description:
+    "Software engineer designing and building products for the web and mobile.",
   metadataBase: new URL("https://josuerhea.me"),
   openGraph: {
-    title: "Josue A. - @josuerhea",
-    description: "Just a software engineer.",
+    title: "Josué Alvarenga — Software Engineer",
+    description:
+      "Software engineer designing and building products for the web and mobile.",
     url: "https://josuerhea.me",
-    siteName: "Josue A. - @josuerhea",
+    siteName: "Josué Alvarenga",
     locale: "en_US",
     type: "website",
   },
   twitter: {
-    title: "Josue A.",
+    title: "Josué Alvarenga — Software Engineer",
     card: "summary_large_image",
   },
 };
@@ -30,9 +32,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${figtree.variable}`}>
-        {/* <div className="w-52 h-52 fixed top-20 right-20 blur-2xl bg-gradient-to-r from-indigo-500 to-pink-500 opacity-10 rounded-full -z-10" />
-        <div className="w-52 h-52 fixed bottom-20 left-20 blur-2xl bg-gradient-to-r from-pink-500 to-indigo-500 opacity-10 rounded-full -z-10" /> */}
+      <body className={`${figtree.variable} ${mono.variable} antialiased selection:bg-foreground selection:text-background`}>
         {children}
       </body>
     </html>
