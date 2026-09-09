@@ -1,10 +1,17 @@
 export const projects = [
   {
-    name: "SearchMate",
-    img: "/searchmate-sc.png",
-    desc: "An integrated search engine for your docs.",
-    url: "https://searchmate.app",
-    altImg: "SearchMate landing page",
+    name: "dbui",
+    img: "/dbui-sc.png",
+    desc: "A native PostgreSQL & MySQL editor built in Rust with GPUI.",
+    url: "https://github.com/JosueRhea/dbui",
+    altImg: "dbui database editor",
+  },
+  {
+    name: "wave",
+    img: "/wave-sc.png",
+    desc: "A code editor written from scratch in C, with an OpenGL renderer.",
+    url: "https://github.com/JosueRhea/wave",
+    altImg: "wave code editor",
   },
   {
     name: "Headless AudioPlayer",

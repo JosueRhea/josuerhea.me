@@ -12,5 +12,8 @@
   "aliases": {
     "components": "@/app/components",
     "utils": "@/lib/utils"
+  },
+  "registries": {
+    "@iconiq": "https://iconiqui.com/r/{name}.json"
   }
 }
